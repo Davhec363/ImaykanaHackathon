@@ -45,6 +45,11 @@ namespace imaykana.Controllers
             return View();
         }
 
+        public ActionResult Stadistics()
+        {
+            return View();
+        }
+
         public ActionResult BarScan(string parameter)
         {
 

@@ -380,6 +380,7 @@
     <Content Include="Content\proyecto_2.jpg" />
     <Content Include="Content\proyecto_3.png" />
     <Content Include="Content\vender-icone-eureka-marketing-digital-inbound-www-anunciar-site_.png" />
+    <Content Include="Content\vistaestadisticas.jpg" />
     <Content Include="Content\Webalys-Kameleon.pics-Medal-2.ico" />
     <Content Include="favicon2.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -520,6 +521,7 @@
     <Content Include="Views\Home\AccountView.cshtml" />
     <Content Include="Views\Home\SelectSocialProject.cshtml" />
     <Content Include="Views\Home\BarScan.cshtml" />
+    <Content Include="Views\Home\Stadistics.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
