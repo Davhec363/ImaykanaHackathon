@@ -1,0 +1,100 @@
+﻿
+@{
+    ViewBag.Title = "SelectSocialProject";
+}
+
+<div class="container">
+    <div class="col-md-12">
+
+        <br />
+        <br />
+
+
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <div class="text-center">
+                    <h2>Choose your favorite social project</h2>
+                </div>
+            </div>
+
+            <div class="panel-body">
+
+
+                <div class="well">
+                    <div id="myCarousel" class="carousel slide">
+
+                        <!-- Carousel items -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="jumbotron">
+                                            <a href="#x"><img src="~/Content/proyecto_1.png" alt="Image" class="img-responsive"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/row-->
+                            </div>
+                            <!--/item-->
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="jumbotron">
+                                            <a href="#x"><img src="~/Content/proyecto_2.jpg" alt="Image" class="img-responsive"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/row-->
+                            </div>
+                            <!--/item-->
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="jumbotron">
+                                            <a href="#x"><img src="~/Content/proyecto_3.png" alt="Image" class="img-responsive"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/row-->
+                            </div>
+                            <!--/item-->
+                            <!--/item-->
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="jumbotron">
+                                            <a href="#x"><img src="~/Content/logo_imaika.jpg" alt="Image" class="img-responsive"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/row-->
+                            </div>
+                        </div>
+                        <!--/carousel-inner-->
+                        <a class="left carousel-control" style="padding-top:10%; width:5%;" href="#myCarousel" data-slide="prev">‹</a>
+                        <a class="right carousel-control" style="padding-top:10%; width:5%;" href="#myCarousel" data-slide="next">›</a>
+                    </div>
+                    <!--/myCarousel-->
+                </div>
+                <!--/well-->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#myCarousel').carousel({
+            interval: 10000
+        })
+
+        $('#myCarousel').on('slid.bs.carousel', function () {
+            //alert("slid");
+        });
+
+
+    });
+</script>

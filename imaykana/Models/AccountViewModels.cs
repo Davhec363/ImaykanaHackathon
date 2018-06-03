@@ -1,112 +1,133 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Web;
 
-namespace imaykana.Models
+namespace Amaykana.Models
 {
-    public class ExternalLoginConfirmationViewModel
+    public class AccountModel
     {
-        [Required]
-        [Display(Name = "Email")]
-        public string Email { get; set; }
-    }
+        private string codigo;
+        private string descripcion;
+        private int cantidad;
+        private double precio;
+        private double precioTotal;
 
-    public class ExternalLoginListViewModel
-    {
-        public string ReturnUrl { get; set; }
-    }
-
-    public class SendCodeViewModel
-    {
-        public string SelectedProvider { get; set; }
-        public ICollection<System.Web.Mvc.SelectListItem> Providers { get; set; }
-        public string ReturnUrl { get; set; }
-        public bool RememberMe { get; set; }
-    }
-
-    public class VerifyCodeViewModel
-    {
-        [Required]
-        public string Provider { get; set; }
-
-        [Required]
         [Display(Name = "Code")]
-        public string Code { get; set; }
-        public string ReturnUrl { get; set; }
+        public string Codigo
+        {
+            get
+            {
+                return codigo;
+            }
 
-        [Display(Name = "Remember this browser?")]
-        public bool RememberBrowser { get; set; }
+            set
+            {
+                codigo = value;
+            }
+        }
 
-        public bool RememberMe { get; set; }
+        [Display(Name = "Description")]
+        public string Descripcion
+        {
+            get
+            {
+                return descripcion;
+            }
+
+            set
+            {
+                descripcion = value;
+            }
+        }
+
+        [Display(Name = "Quantity")]
+        public int Cantidad
+        {
+            get
+            {
+                return cantidad;
+            }
+
+            set
+            {
+                cantidad = value;
+            }
+        }
+        [Display(Name = "Green coins")]
+        public double Precio
+        {
+            get
+            {
+                return precio;
+            }
+
+            set
+            {
+                precio = value;
+            }
+        }
+
+
+        [Display(Name = "Total green coins")]
+        public double PrecioTotal
+        {
+            get
+            {
+                return precioTotal;
+            }
+
+            set
+            {
+                precioTotal = cantidad * precio;
+            }
+        }
     }
 
-    public class ForgotViewModel
+    public class ListaUsuarios
     {
-        [Required]
-        [Display(Name = "Email")]
-        public string Email { get; set; }
-    }
+        public List<AccountModel> ListaUsuariosApp = new List<AccountModel>();
 
-    public class LoginViewModel
-    {
-        [Required]
-        [Display(Name = "Email")]
-        [EmailAddress]
-        public string Email { get; set; }
 
-        [Required]
-        [DataType(DataType.Password)]
-        [Display(Name = "Password")]
-        public string Password { get; set; }
+        public void Usuarios()
+        {
+            var account = new AccountModel();
+            account.Codigo = "0001";
+            account.Descripcion = "Botella plastica 365ml";
+            account.Cantidad = 1;
+            account.Precio = 5;
+            account.PrecioTotal = account.Precio * account.Cantidad;
+            ListaUsuariosApp.Add(account);
 
-        [Display(Name = "Remember me?")]
-        public bool RememberMe { get; set; }
-    }
+            var account2 = new AccountModel();
+            account2.Codigo = "0002";
+            account2.Descripcion = "Botella plastica 1000ml";
+            account2.Cantidad = 15;
+            account2.Precio = 6;
+            account2.PrecioTotal = account2.Precio * account2.Cantidad;
+            ListaUsuariosApp.Add(account2);
 
-    public class RegisterViewModel
-    {
-        [Required]
-        [EmailAddress]
-        [Display(Name = "Email")]
-        public string Email { get; set; }
+            var account3 = new AccountModel();
+            account3.Codigo = "0003";
+            account3.Descripcion = "Botella plastica 850ml";
+            account3.Cantidad = 10;
+            account3.Precio = 7;
+            account3.PrecioTotal = account3.Precio * account3.Cantidad;
+            ListaUsuariosApp.Add(account3);
 
-        [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
-        [DataType(DataType.Password)]
-        [Display(Name = "Password")]
-        public string Password { get; set; }
+        }
 
-        [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
-        public string ConfirmPassword { get; set; }
-    }
+        public double Total()
+        {
+            var total = 0.0;
+            foreach (AccountModel item in ListaUsuariosApp)
+            {
+                total = item.PrecioTotal + total;
+            }
 
-    public class ResetPasswordViewModel
-    {
-        [Required]
-        [EmailAddress]
-        [Display(Name = "Email")]
-        public string Email { get; set; }
+            return total;
+        }
 
-        [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
-        [DataType(DataType.Password)]
-        [Display(Name = "Password")]
-        public string Password { get; set; }
-
-        [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
-        public string ConfirmPassword { get; set; }
-
-        public string Code { get; set; }
-    }
-
-    public class ForgotPasswordViewModel
-    {
-        [Required]
-        [EmailAddress]
-        [Display(Name = "Email")]
-        public string Email { get; set; }
     }
 }

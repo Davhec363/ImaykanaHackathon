@@ -1,0 +1,60 @@
+﻿@model Amaykana.Models.ListaUsuarios
+
+@{
+    ViewBag.Title = "AccountView";
+}
+
+@section scripts{
+
+    @* Para hacer uso de data-tables *@
+    <link href="~/content/datatables/css/jquery.datatables.min.css" rel="stylesheet" />
+    <script src="~/scripts/datatables/jquery.datatables.min.js"></script>
+}
+
+
+<br/>
+<br />
+
+
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <div class="text-center">
+            <h2>Barcoder Scan</h2>
+        </div>
+    </div>
+
+    <div class="panel-body">
+
+        <div class="text-center">
+            <img style="max-width:500px; margin-top: -7px;"
+                 src="~/Content/Barcode-Scanning.gif">
+        </div>
+        
+        <hr />
+
+        <div class="text-center">
+            <button type="button" class="btn btn-default" 
+                    style="background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 50%;" onclick="location.href='@Url.Action("AccountView", "Home", new { Id = ViewBag.Id })'"></button>
+        </div>
+
+    </div>
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('#myTable').DataTable();
+    });
+
+</script>

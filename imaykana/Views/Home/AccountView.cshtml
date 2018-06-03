@@ -1,0 +1,108 @@
+﻿@model Amaykana.Models.ListaUsuarios
+
+@{
+    ViewBag.Title = "AccountView";
+    var totalFinal = ViewBag.Total;
+}
+
+@section scripts{
+
+    @* Para hacer uso de data-tables *@
+    <link href="~/content/datatables/css/jquery.datatables.min.css" rel="stylesheet" />
+    <script src="~/scripts/datatables/jquery.datatables.min.js"></script>
+}
+
+
+<br/>
+<br />
+
+
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <div class="text-center">
+            <h2>My Account</h2>
+        </div>
+    </div>
+
+    <div class="panel-body">
+        <table class="table" id="myTable">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ListaUsuariosApp[0].Codigo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ListaUsuariosApp[0].Descripcion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ListaUsuariosApp[0].Cantidad)
+                </th>
+                <th>
+                    @if (ViewBag.Id == "p") { Html.DisplayNameFor(model => model.ListaUsuariosApp[0].Precio); }
+                </th>
+                <th>
+                    @if (ViewBag.Id == "p") {@Html.DisplayNameFor(model => model.ListaUsuariosApp[0].PrecioTotal); }
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model.ListaUsuariosApp)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Codigo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cantidad)
+                    </td>
+                    <td>
+                        @if (ViewBag.Id == "p") { Html.DisplayFor(modelItem => item.Precio); }
+                    </td>
+                    <td>
+                        @if (ViewBag.Id == "p") { Html.DisplayFor(modelItem => item.PrecioTotal); }
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+    <div class="panel-footer success">
+        <span> <b>TOTAL</b> </span>
+        <span>
+
+                @if (ViewBag.Id == "p")
+                {
+                    var suma = 0;
+                    foreach (var item in Model.ListaUsuariosApp)
+                    {
+                        suma += item.Cantidad;
+                    }
+
+                    <b>@suma</b>
+                }
+                else
+                {
+                    <b>@totalFinal</b>
+                }
+        </span>
+    </div >
+
+
+
+    </div >
+
+
+
+    <script src = "~/Scripts/jquery-1.10.2.min.js" ></script >
+
+
+
+    <script type = "text/javascript" >
+
+    $(document).ready(function() {
+        $('#myTable').DataTable();
+                    });
+
+</script>

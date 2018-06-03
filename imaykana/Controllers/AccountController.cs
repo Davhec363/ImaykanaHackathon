@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using imaykana.Models;
+using Amaykana.Models;
 
 namespace imaykana.Controllers
 {

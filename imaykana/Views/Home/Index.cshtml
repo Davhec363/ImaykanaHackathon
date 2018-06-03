@@ -1,31 +1,63 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "";
 }
 
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+
+    <h1 class="text-center">
+        <img style="max-width:100px; margin-top: -7px;"
+             src="~/Content/profile.png">
+    </h1>
+
+    <div class="text-center">
+        <p class="lead">Ana María Flores Pérez</p>    
+    </div>
+        
+    <div class="container text-center">
+        <i class="glyphicon glyphicon-map-marker" style="color:blue"></i>
+        <span class="lead text-center">Quito - Ecuador</span>
+    </div>
+
+    <div class="container text-center">
+        <i class="glyphicon glyphicon-leaf" style="color:green"></i>
+        <span class="lead text-center">Miembro activo</span>
+    </div>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+<div class="container">
+    <div class="row">
+        <div class="thumbnail col-sm-3 col-md-4">
+            <img src="~/Content/Webalys-Kameleon.pics-Medal-2.ico" alt=" " style="max-width:100px;">
+            <div class="caption">
+                <h3 class="text-center">
+                    <a href='@Url.Action("BarScan", "Home", new { id = "p"})'>Perritos sin hogar <span class="badge" style="background-color: #468847">75</span></a>
+                </h3>
+                <p>Se calcula que en la Ciudad de Quito hay casi 1.5 millones de perros que viven en la calle, de los cuales al menos 7 de cada 10 tuvieron dueño alguna vez. En una encuesta realizada entre los usuarios de échameelperro.mx, 39% de los participantes declaró que siente compasión al ver...</p>
+                @*<p align="center"><a href="http://bootsnipp.com/" class="btn btn-primary btn-block">Add bottle</a></p>*@
+            </div>
+        </div>
+
+        <div class="thumbnail col-sm-3 col-md-4">
+            <img src="~/Content/icon_premio.png" alt=" " style="max-width:100px;">
+            <div class="caption">
+                <h3 class="text-center">
+                    <a href='@Url.Action("BarScan", "Home")'>Agregar green coins a tu cuenta <span class="badge" style="background-color: #c67605">67</span></a>
+                </h3>
+                <p>Recuerda que mientras más recicles mejores beneficios podras tener.</p>
+                @*<p align="center"><a href="http://bootsnipp.com/" class="btn btn-primary btn-block">Add bottle</a></p>*@
+            </div>
+        </div>
+
+        <div class="thumbnail col-sm-3 col-md-4">
+            <img src="~/Content/cup-2533629_960_720.png" alt=" " style="max-width:100px;">
+            <div class="caption">
+                <h3 class="text-center">
+                    <a href='@Url.Action("BarScan", "Home")'>Salvemos las Galápagos <span class="badge" style="background-color: #953b39">42</span></a>
+                </h3>
+                <p>Las Islas Galápagos fueron declaradas Patrimonio de la Humanidad en 1978 por la Unesco. El archipiélago tiene como mayor fuente de ingresos el turismo y recibe 200 000 turistas al año.3​ También se ha desarrollado el turismo ecológico con el fin de preservar las especies. La región fue el hábitat del Solitario George, el último espécimen de la especie tortuga gigante de Pinta, extinta el 24 de junio del 2012....</p>
+                @*<p align="center"><a href="http://bootsnipp.com/" class="btn btn-primary btn-block">Add bottle</a></p>*@
+            </div>
+        </div>
+       
     </div>
 </div>
